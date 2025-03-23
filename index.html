@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Weather App</title>
+</head>
+<body>
+  <main class="container">
+    <!-- Search Section -->
+    <section class="search-section">
+      <input type="search" id="search-box" placeholder="e.g. London" aria-label="Search for a city">
+      <button id="button" onclick="searchWeather()">Search</button>
+    </section>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="error-message hidden"></div>
+
+    <div class="weather-wrapper">
+      <!-- Left: Current Weather -->
+      <section class="current-weather">
+        <h2><span id="condition">Clear</span></h2>
+        <figure>
+          <img src="https://openweathermap.org/img/wn/01d@2x.png" id="weather-icon" alt="Weather Icon">
+        </figure>
+        <h1><span id="temperature">20</span>°C</h1>
+        <p><span id="day">Friday</span>, <span id="date">March 21, 2025</span></p>
+        <h3 id="city-name">London</h3>
+
+        <!-- Weather Info -->
+        <div class="weather-info">
+          <div class="info-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/414/414880.png" alt="Pressure Icon">
+            <p><span id="pressure">1013</span> hPa</p>
+            <span>Pressure</span>
+          </div>
+          <div class="info-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/219/219816.png" alt="Humidity Icon">
+            <p><span id="humidity">65</span>%</p>
+            <span>Humidity</span>
+          </div>
+          <div class="info-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" alt="Wind Icon">
+            <p><span id="wind-speed">5.2</span> m/s</p>
+            <span>Wind Speed</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: 5-Day Forecast -->
+      <section class="forecast">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast-list" class="forecast-list"></div>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
